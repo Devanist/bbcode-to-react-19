@@ -9,10 +9,12 @@ export default class HorizontalRuleTag extends Tag {
     this.STRIP_OUTER = true;
   }
 
+  // eslint-disable-next-line class-methods-use-this
   toHTML() {
     return '<hr />';
   }
 
+  // eslint-disable-next-line class-methods-use-this
   toReact() {
     return <hr />;
   }

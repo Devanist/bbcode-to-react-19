@@ -3,9 +3,8 @@ import React from 'react';
 import Tag from '../tag';
 
 export default class ColorTag extends Tag {
-
   toHTML() {
-    const color = this.params.color;
+    const { color } = this.params;
 
     if (!color) {
       return this.getContent();
@@ -15,7 +14,7 @@ export default class ColorTag extends Tag {
   }
 
   toReact() {
-    const color = this.params.color;
+    const { color } = this.params;
 
     if (!color) {
       return this.getComponents();
@@ -28,4 +27,3 @@ export default class ColorTag extends Tag {
     );
   }
 }
-

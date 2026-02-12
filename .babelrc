@@ -1,17 +1,17 @@
 {
 	"presets": [
-        ["env", {
-            "targets": {
-                "browsers": [
-                    "> 1%",
-                    "last 4 versions"
-                ]
-            },
-            "debug": false
-        }],
-		"react",
-        "stage-1"
-	],
-
-    "plugins": ["transform-object-assign"]
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "browsers": [
+                        "> 1%",
+                        "last 4 versions"
+                    ]
+                },
+                "debug": false
+            }
+        ],
+		"@babel/preset-react"
+	]
 }

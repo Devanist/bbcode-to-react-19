@@ -18,10 +18,13 @@ export default class CodeTag extends Tag {
     if (this.inline) {
       return ['<code>', this.getContent(true), '</code>'];
     }
+
     const lang = this.params.lang || this.params[this.name];
+
     if (lang) {
-      return [`<pre class=\"prettyprint lang-${lang}\">`, this.getContent(true), '</pre>'];
+      return [`<pre class="prettyprint lang-${lang}">`, this.getContent(true), '</pre>'];
     }
+
     return ['<pre>', this.getContent(true), '</pre>'];
   }
 
@@ -44,4 +47,3 @@ export default class CodeTag extends Tag {
     );
   }
 }
-

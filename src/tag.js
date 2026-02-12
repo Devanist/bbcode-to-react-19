@@ -3,7 +3,6 @@ import React from 'react';
 import { NEWLINE_RE, LINE_BREAK } from './constants';
 
 export default class Tag {
-
   constructor(renderer, settings = {}) {
     this.renderer = renderer;
     this.CLOSED_BY = [];
@@ -22,11 +21,13 @@ export default class Tag {
       this.parent.children.push(this);
     }
 
+    // eslint-disable-next-line no-param-reassign
     settings.params = settings.params || [];
 
-    settings.params.forEach(item => {
+    settings.params.forEach((item) => {
       if (item.length > 1 && item[1]) {
-        this.params[item[0]] = item[1];
+        const firstItem = item[1];
+        this.params[item[0]] = firstItem;
       }
     });
   }
@@ -38,7 +39,7 @@ export default class Tag {
       components.push(this.text);
     }
 
-    this.children.forEach(child => {
+    this.children.forEach((child) => {
       if (!(this.DISCARD_TEXT && child.name === null)) {
         const childComponents = child.toReact();
         components.push(childComponents);
@@ -66,17 +67,15 @@ export default class Tag {
       pieces.push(text);
     }
 
-    this.children.forEach(child => {
+    this.children.forEach((child) => {
       if (raw) {
         pieces.push(child.toText());
-      } else {
-        if (!(this.DISCARD_TEXT && child.name === null)) {
-          const childPieces = child.toHTML();
-          if (typeof childPieces === 'string') {
-            pieces.push(childPieces);
-          } else {
-            pieces.push(...childPieces);
-          }
+      } else if (!(this.DISCARD_TEXT && child.name === null)) {
+        const childPieces = child.toHTML();
+        if (typeof childPieces === 'string') {
+          pieces.push(childPieces);
+        } else {
+          pieces.push(...childPieces);
         }
       }
     });
@@ -102,7 +101,7 @@ export default class Tag {
 
     if (this.name !== null) {
       if (this.params.length) {
-        const params = Object.keys(this.params).map(k => `${k}=${this.params[k]}`).join(' ');
+        const params = Object.keys(this.params).map((k) => `${k}=${this.params[k]}`).join(' ');
 
         if (this.params[this.name]) {
           pieces.push(`[${params}]`);
@@ -132,5 +131,4 @@ export default class Tag {
   toReact() {
     return React.Children.toArray(this.getComponents());
   }
-
 }

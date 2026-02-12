@@ -3,7 +3,6 @@ import React from 'react';
 import Tag from '../tag';
 
 export default class LinkTag extends Tag {
-
   toHTML() {
     let url = this.renderer.strip(this.params[this.name] || this.getContent(true));
     if (/javascript:/i.test(url)) {
@@ -41,4 +40,3 @@ export default class LinkTag extends Tag {
     );
   }
 }
-

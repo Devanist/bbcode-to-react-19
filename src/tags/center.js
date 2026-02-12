@@ -3,7 +3,6 @@ import React from 'react';
 import Tag from '../tag';
 
 export default class CenterTag extends Tag {
-
   toHTML() {
     return ['<div style="text-align:center;">', this.getContent(), '</div>'];
   }
@@ -15,6 +14,4 @@ export default class CenterTag extends Tag {
       </div>
     );
   }
-
 }
-

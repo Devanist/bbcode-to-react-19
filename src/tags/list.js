@@ -3,7 +3,6 @@ import React from 'react';
 import Tag from '../tag';
 
 export default class ListTag extends Tag {
-
   constructor(renderer, settings = {}) {
     super(renderer, settings);
 
@@ -37,8 +36,8 @@ export default class ListTag extends Tag {
       A: 'upper-alpha',
       i: 'lower-roman',
       I: 'upper-roman',
-      '1': 'decimal',
-    }
+      1: 'decimal',
+    };
 
     if (listTypes[listType]) {
       return (
@@ -55,4 +54,3 @@ export default class ListTag extends Tag {
     return <ul>{this.getComponents()}</ul>;
   }
 }
-

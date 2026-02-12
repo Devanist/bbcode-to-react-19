@@ -1,4 +1,5 @@
 // https://github.com/vishnevskiy/bbcodejs/blob/master/src/coffee/parser.coffee
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { SPACE_RE, TOKEN_RE, START_NEWLINE_RE } from './constants';
 import defaultTags from './tags';
@@ -12,7 +13,7 @@ export default class Parser {
     if (!allowedTags) {
       this.tags = defaultTags;
     } else {
-      allowedTags.forEach(name => {
+      allowedTags.forEach((name) => {
         if (defaultTags[name]) {
           this.tags[name] = defaultTags[name];
         }
@@ -26,6 +27,7 @@ export default class Parser {
     this.tags[name] = tag;
   }
 
+  // eslint-disable-next-line class-methods-use-this
   parseParams(token) {
     const params = [];
 
@@ -46,7 +48,7 @@ export default class Parser {
       let terminate = ' ';
       let skipNext = false;
 
-      Array.from(token).forEach(c => {
+      Array.from(token).forEach((c) => {
         if (skipNext) {
           skipNext = false;
         } else if (target === key && c === '=') {
@@ -64,7 +66,8 @@ export default class Parser {
             skipNext = true;
           }
 
-          target = key = [];
+          key = [];
+          target = key;
           value = [];
           terminate = ' ';
         }
@@ -78,8 +81,9 @@ export default class Parser {
 
   createTextNode(parent, text) {
     const ref = parent.children.slice(-1)[0];
-    //console.log('ref', ref, text)
+
     if (ref != null && ref.STRIP_OUTER) {
+      // eslint-disable-next-line no-param-reassign
       text = text.replace(START_NEWLINE_RE, '');
     }
 
@@ -94,6 +98,7 @@ export default class Parser {
     while (tokens.length) {
       token = tokens.shift();
       if (!token.length) {
+        // eslint-disable-next-line no-continue
         continue;
       }
 
@@ -111,6 +116,7 @@ export default class Parser {
           tagName = tagName.slice(1);
           if (!this.tags[tagName]) {
             this.createTextNode(current, token);
+            // eslint-disable-next-line no-continue
             continue;
           }
 
@@ -121,6 +127,7 @@ export default class Parser {
           const cls = this.tags[tagName];
           if (!cls) {
             this.createTextNode(current, token);
+            // eslint-disable-next-line no-continue
             continue;
           }
 
@@ -150,4 +157,3 @@ export default class Parser {
     return this.parse(input).toReact();
   }
 }
-

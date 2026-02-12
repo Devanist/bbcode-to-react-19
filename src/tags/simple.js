@@ -6,7 +6,7 @@ export default (name, attributes) => {
     constructor(renderer, settings = {}) {
       super(renderer, settings);
 
-      Object.keys(attributes || {}).forEach(key => {
+      Object.keys(attributes || {}).forEach((key) => {
         this[key] = attributes[key];
       });
     }
@@ -24,10 +24,10 @@ export default (name, attributes) => {
     toReact() {
       const Name = name;
       return (
+        // eslint-disable-next-line react/jsx-props-no-spreading
         <Name {...this.params}>{this.getComponents()}</Name>
       );
     }
-
   }
   return SimpleTag;
 };

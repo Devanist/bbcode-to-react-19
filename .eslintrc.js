@@ -1,22 +1,3 @@
-var ecmaFeatures = {
-  'jsx': true,
-  'arrowFunctions': true,
-  'blockBindings': true,
-  'defaultParams': true,
-  'destructuring': true,
-  'forOf': true,
-  'generators': true,
-  'objectLiteralComputedProperties': true,
-  'objectLiteralShorthandMethods': true,
-  'objectLiteralShorthandProperties': true,
-  'experimentalObjectRestSpread': true,
-  'restParams': true,
-  'spread': true,
-  'templateStrings': true,
-  'modules': true,
-  'classes': true
-};
-
 var rules = {
   'comma-dangle': 0,
   'new-cap': 0,
@@ -52,9 +33,6 @@ module.exports = {
   ],
   'parserOptions': {
     'sourceType': 'module',
-    'ecmaFeatures': ecmaFeatures
   },
-  'ecmaFeatures': ecmaFeatures,
   rules: rules,
-  extensions: ['', '.js', '.jsx']
 };

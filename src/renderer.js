@@ -8,14 +8,12 @@ import {
 
 export default class Renderer {
   constructor(options) {
-    this.options = Object.assign({
-      linkify: false,
-    }, options);
+    this.options = { linkify: false, ...options };
     this.contexts = [];
   }
 
   context(context, func) {
-    const newOptions = Object.assign({}, this.options, context);
+    const newOptions = { ...this.options, ...context };
     this.contexts.push(this.options);
     this.options = newOptions;
     const v = func();
@@ -23,11 +21,13 @@ export default class Renderer {
     return v;
   }
 
+  // eslint-disable-next-line class-methods-use-this
   escape(value) {
     // Escapes a string so it is valid within XML or XHTML
     return value.replace(ESCAPE_RE, (match) => ESCAPE_DICT[match]);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   linkify(value) {
     return value.replace(URL_RE, (...match) => {
       const url = match[1];
@@ -39,14 +39,16 @@ export default class Renderer {
 
       const href = proto ? url : `http://${url}`;
 
-      return `<a href=\"${href}\" target=\"_blank\">${url}</a>`;
+      return `<a href="${href}" target="_blank">${url}</a>`;
     });
   }
 
+  // eslint-disable-next-line class-methods-use-this
   strip(text) {
     return text.replace(/^\s+|\s+$/g, '');
   }
 
+  // eslint-disable-next-line class-methods-use-this
   cosmeticReplace(value) {
     return value.replace(COSMETIC_RE, (...match) => {
       const item = match[0];
@@ -54,11 +56,12 @@ export default class Renderer {
     });
   }
 
+  // eslint-disable-next-line class-methods-use-this
   htmlAttributes(attributes) {
     if (!attributes) {
       return '';
     }
 
-    return Object.keys(attributes).map(k => `${k}=\"${attributes[k]}\"`).join(' ');
+    return Object.keys(attributes).map((k) => `${k}="${attributes[k]}"`).join(' ');
   }
 }

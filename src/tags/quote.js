@@ -3,7 +3,6 @@ import React from 'react';
 import Tag from '../tag';
 
 export default class QuoteTag extends Tag {
-
   constructor(renderer, settings = {}) {
     super(renderer, settings);
 
@@ -30,11 +29,15 @@ export default class QuoteTag extends Tag {
     const citation = this.params.quote;
     return (
       <blockquote>
-        {citation && <small>{citation} wrote:</small>}
+        {citation && (
+        <small>
+          {citation}
+          {' '}
+          wrote:
+        </small>
+        )}
         {this.getComponents()}
       </blockquote>
     );
   }
-
 }
-

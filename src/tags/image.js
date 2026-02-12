@@ -3,7 +3,6 @@ import React from 'react';
 import Tag from '../tag';
 
 export default class ImageTag extends Tag {
-
   toHTML() {
     const attributes = {
       src: this.renderer.strip(this.getContent(true)),
@@ -23,6 +22,7 @@ export default class ImageTag extends Tag {
   toReact() {
     const src = this.getContent(true);
     return (
+      // eslint-disable-next-line jsx-a11y/alt-text
       <img
         role="presentation"
         src={src}
@@ -32,4 +32,3 @@ export default class ImageTag extends Tag {
     );
   }
 }
-

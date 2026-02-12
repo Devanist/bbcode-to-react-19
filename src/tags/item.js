@@ -3,7 +3,6 @@ import React from 'react';
 import Tag from '../tag';
 
 export default class ListItemTag extends Tag {
-
   constructor(renderer, settings = {}) {
     super(renderer, settings);
 
@@ -20,6 +19,4 @@ export default class ListItemTag extends Tag {
       <li>{this.getComponents()}</li>
     );
   }
-
 }
-

@@ -1,4 +1,3 @@
-import Tag from '../tag';
 import CodeTag from './code';
 import ImageTag from './image';
 import HorizontalRuleTag from './hr';

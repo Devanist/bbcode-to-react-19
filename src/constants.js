@@ -1,4 +1,3 @@
-
 export const NEWLINE_RE = /\r?\n/g;
 export const LINE_BREAK = '<br />';
 
@@ -14,6 +13,7 @@ export const ESCAPE_DICT = {
   '"': '&quot;',
 };
 
+// eslint-disable-next-line no-useless-escape
 export const URL_RE = /\b((?:([\w-]+):(\/{1,3})|www[.])(?:(?:(?:[^\s&()]|&amp;|&quot;)*(?:[^!"#$%&'()*+,.:;<=>?@\[\]^`{|}~\s]))|(?:\((?:[^\s&()]|&amp;|&quot;)*\)))+)/g;
 
 export const COSMETIC_DICT = {
