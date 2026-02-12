@@ -1,17 +1,18 @@
 'use strict';
 const path = require('path');
-const webpack = require('webpack');
+// const webpack = require('webpack');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const libraryName = 'bbcode-to-react';
 
-module.exports = function (env) {
+module.exports = function () {
+  const env = process.env.NODE_ENV;
   let outputFile;
   const plugins = [
     new CleanWebpackPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(env)
-    }),
+    // new webpack.DefinePlugin({
+    //   'process.env.NODE_ENV': JSON.stringify(env)
+    // }),
   ];
 
   if (env === 'production') {

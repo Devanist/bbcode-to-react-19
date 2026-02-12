@@ -6,7 +6,7 @@
 	"types": "index.d.ts",
 	"scripts": {
 		"start": "npm run build",
-		"build": "cross-env WEBPACK_BUILD=production webpack --progress && webpack --progress",
+		"build": "cross-env NODE_ENV=production webpack --progress",
 		"prebuild": "babel src --out-dir lib --ignore src/__tests__/",
 		"create-release": "sh ./scripts/release",
 		"publish-release": "sh ./scripts/publish",
