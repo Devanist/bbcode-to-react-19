@@ -8,6 +8,7 @@
 		"start": "npm run build",
 		"build": "cross-env NODE_ENV=production webpack --progress",
 		"prebuild": "babel src --out-dir lib --ignore src/__tests__/",
+		"prepare": "npm run build",
 		"create-release": "sh ./scripts/release",
 		"publish-release": "sh ./scripts/publish",
 		"lint": "eslint src --ext .js,.jsx"
