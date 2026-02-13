@@ -1,4 +1,4 @@
-var rules = {
+const rules = {
   'comma-dangle': 0,
   'new-cap': 0,
   'arrow-body-style': 0,
@@ -9,7 +9,7 @@ var rules = {
   'no-extra-parens': ['error', 'functions'],
   'dot-notation': 0,
   'max-len': 0,
-  'camelcase': 0,
+  camelcase: 0,
   'react/jsx-pascal-case': 0,
   'prefer-const': 0,
   'react/jsx-filename-extension': 0,
@@ -18,21 +18,22 @@ var rules = {
 };
 
 module.exports = {
-  'extends': 'airbnb',
-  'env': {
-    'browser': true,
-    'node': true,
-    'es6': true
+  extends: 'airbnb',
+  env: {
+    browser: true,
+    node: true,
+    es6: true
   },
-  'globals': {
-    'describe': true,
-    'it': true
+  globals: {
+    describe: true,
+    it: true
   },
-  'plugins': [
+  plugins: [
     'react'
   ],
-  'parserOptions': {
-    'sourceType': 'module',
+  parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 2020,
   },
   rules: rules,
 };
