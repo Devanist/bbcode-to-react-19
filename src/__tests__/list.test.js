@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 
 import parser from '../index';
@@ -6,7 +5,7 @@ import parser from '../index';
 describe('[list]', () => {
   it('should parse [list] to react', () => {
     const bbcode = '[list]list[/list]';
-    const { container } = render(<>{parser.toReact(bbcode)}</>);
+    const { container } = render(parser.toReact(bbcode));
     const el = container.firstChild;
 
     expect(el.textContent).toBe('list');
@@ -19,7 +18,7 @@ describe('[list]', () => {
 [*]The second possible answer
 [*]The third possible answer
 [/list]`;
-    const { container } = render(<>{parser.toReact(bbcode)}</>);
+    const { container } = render(parser.toReact(bbcode));
     const el = container.firstChild;
 
     expect(el.tagName.toLowerCase()).toBe('ol');
@@ -34,7 +33,7 @@ describe('[list]', () => {
 [*]The second possible answer
 [*]The third possible answer
 [/list]`;
-    const { container } = render(<>{parser.toReact(bbcode)}</>);
+    const { container } = render(parser.toReact(bbcode));
     const el = container.firstChild;
 
     expect(el.tagName.toLowerCase()).toBe('ol');
@@ -49,7 +48,7 @@ describe('[list]', () => {
 [*]The second possible answer
 [*]The third possible answer
 [/list]`;
-    const { container } = render(<>{parser.toReact(bbcode)}</>);
+    const { container } = render(parser.toReact(bbcode));
     const el = container.firstChild;
 
     expect(el.tagName.toLowerCase()).toBe('ol');
@@ -64,7 +63,7 @@ describe('[list]', () => {
 [*]The second possible answer
 [*]The third possible answer
 [/list]`;
-    const { container } = render(<>{parser.toReact(bbcode)}</>);
+    const { container } = render(parser.toReact(bbcode));
     const el = container.firstChild;
 
     expect(el.tagName.toLowerCase()).toBe('ol');
@@ -79,7 +78,7 @@ describe('[list]', () => {
 [*]Buy a new computer
 [*]Swear at computer when it crashes
 [/list]`;
-    const { container } = render(<>{parser.toReact(bbcode)}</>);
+    const { container } = render(parser.toReact(bbcode));
     const el = container.firstChild;
 
     expect(el.tagName.toLowerCase()).toBe('ol');
@@ -90,7 +89,7 @@ describe('[list]', () => {
 
   it('should parse [*]item[/*] to react', () => {
     const bbcode = '[*]item[/*]';
-    const { container } = render(<>{parser.toReact(bbcode)}</>);
+    const { container } = render(parser.toReact(bbcode));
     const el = container.firstChild;
 
     expect(el.textContent).toBe('item');
@@ -103,7 +102,7 @@ describe('[list]', () => {
       [*]item2[/*]
       [*]item3[/*]
     [/list]`;
-    const { container } = render(<>{parser.toReact(bbcode)}</>);
+    const { container } = render(parser.toReact(bbcode));
     const el = container.firstChild;
 
     expect(el.tagName.toLowerCase()).toBe('ul');

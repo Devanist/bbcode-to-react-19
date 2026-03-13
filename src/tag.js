@@ -1,5 +1,4 @@
 // https://github.com/vishnevskiy/bbcodejs/blob/master/src/coffee/tags.coffee
-import React from 'react';
 import { NEWLINE_RE, LINE_BREAK } from './constants';
 
 export default class Tag {
@@ -46,7 +45,7 @@ export default class Tag {
       }
     });
 
-    return React.Children.toArray(components);
+    return components;
   }
 
   getContent(raw = false) {
@@ -129,6 +128,6 @@ export default class Tag {
   }
 
   toReact() {
-    return React.Children.toArray(this.getComponents());
+    return this.getComponents();
   }
 }

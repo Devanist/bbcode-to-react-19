@@ -12,6 +12,7 @@ class YoutubeTag extends Tag {
       width: this.params.width || 420,
       height: this.params.height || 315,
     };
+
     return (
       // eslint-disable-next-line jsx-a11y/iframe-has-title
       <iframe
@@ -39,7 +40,7 @@ parser.registerTag('b', BoldTag); // replace exists tag
 describe('customize tag', () => {
   it('should parse customize youtube tag to react', () => {
     const bbcode = '[youtube width="400"]https://www.youtube.com/watch?v=AB6RjNeDII0[/youtube]';
-    const { container } = render(<>{parser.toReact(bbcode)}</>);
+    const { container } = render(parser.toReact(bbcode));
     const el = container.firstChild;
 
     expect(el.textContent).toBe('');
@@ -53,7 +54,7 @@ describe('customize tag', () => {
 
   it('should replace the exist tag', () => {
     const bbcode = '[b]strong[/b]';
-    const { container } = render(<>{parser.toReact(bbcode)}</>);
+    const { container } = render(parser.toReact(bbcode));
     const el = container.firstChild;
 
     expect(el.textContent).toBe('strong');
