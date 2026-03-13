@@ -36,4 +36,12 @@ module.exports = {
     ecmaVersion: 2020,
   },
   rules: rules,
+  overrides: [
+    {
+      files: ['**/__tests__/**', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      env: {
+        jest: true
+      }
+    }
+  ]
 };

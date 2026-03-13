@@ -1,3 +1,11 @@
+<a name="1.0.0"></a>
+## [1.0.0](https://github.com/devanist/bbcode-to-react-19/compare/0.2.14...1.0.0) (2025-03-13)
+
+
+### Breaking changes
+* replaced enzyme with Jest and RTL due to enzyme being abandoned now
+* as webpack was upgraded from 1 to 5, you need at least Node.js 10.13.0
+
 <a name="0.2.14"></a>
 ## [0.2.14](https://github.com/CedricVerlinden/bbcode-to-react-18/compare/0.2.13...0.2.14) (2024-05-29)
 

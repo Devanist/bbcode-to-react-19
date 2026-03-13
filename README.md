@@ -1,20 +1,22 @@
 # bbcode-to-react
 
-A utility for turning raw BBCode into React elements for React 18.
+A utility for turning raw BBCode into React elements for React 19.
+Package was originally developed by Junmin Liu and Cédric Verlinden.
+I've upgraded React to v19 along with other packages and replaced deprecated enzyme with Jest/RTL
 
 ## Installation
 
 Install `bbcode-to-react` and **peer dependencies** via NPM
 
 ```sh
-npm install --save bbcode-to-react-18 react
+npm install --save bbcode-to-react-19 react
 ```
 
-Import `bbcode-to-react-18`, example:
+Import `bbcode-to-react-19`, example:
 
 ```js
 import React from "react";
-import parser from "bbcode-to-react-18";
+import parser from "bbcode-to-react-19";
 import { renderToString } from "react-dom/server";
 
 const Example = (props) => {
@@ -29,7 +31,7 @@ console.log(renderToString(<Example />));
 
 ```js
 import React from "react";
-import parser, { Tag } from "bbcode-to-react-18";
+import parser, { Tag } from "bbcode-to-react-19";
 
 class YoutubeTag extends Tag {
 	toReact() {
