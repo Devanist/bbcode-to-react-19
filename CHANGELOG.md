@@ -1,5 +1,17 @@
+<a name="2.0.0"></a>
+## [2.0.0](https://github.com/devanist/bbcode-to-react-19/compare/1.0.0...2.0.0) (2026-04-09)
+
+
+### Breaking changes
+* updated dependencies, minimal supported node version is 20.10 now
+
+### Meta
+* updated README.md with information about supported node version
+* fixed date of release in description of version 1.0
+
+
 <a name="1.0.0"></a>
-## [1.0.0](https://github.com/devanist/bbcode-to-react-19/compare/0.2.14...1.0.0) (2025-03-13)
+## [1.0.0](https://github.com/devanist/bbcode-to-react-19/compare/0.2.14...1.0.0) (2026-03-13)
 
 
 ### Breaking changes

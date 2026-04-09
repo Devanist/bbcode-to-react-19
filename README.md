@@ -4,6 +4,9 @@ A utility for turning raw BBCode into React elements for React 19.
 Package was originally developed by Junmin Liu and Cédric Verlinden.
 I've upgraded React to v19 along with other packages and replaced deprecated enzyme with Jest/RTL
 
+## Requirements
+* Node v20.10+
+
 ## Installation
 
 Install `bbcode-to-react` and **peer dependencies** via NPM
