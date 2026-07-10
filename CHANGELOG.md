@@ -1,3 +1,18 @@
+<a name="2.0.2"></a>
+## [2.0.2](https://github.com/devanist/bbcode-to-react-19/compare/2.0.1...2.0.2) (2026-07-10)
+
+
+### Fixes
+* dependencies updated
+
+
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/devanist/bbcode-to-react-19/compare/2.0.0...2.0.1) (2026-04-09)
+
+
+### Technical release
+
+
 <a name="2.0.0"></a>
 ## [2.0.0](https://github.com/devanist/bbcode-to-react-19/compare/1.0.0...2.0.0) (2026-04-09)
 
